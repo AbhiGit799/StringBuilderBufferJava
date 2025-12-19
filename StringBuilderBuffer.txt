@@ -1,0 +1,82 @@
+In Java, StringBuilder is a mutable class used to efficiently manipulate strings.
+Unlike String (immutable), it allows modifications such as append, insert, delete, and reverse
+without creating new objects, making it faster and memory-efficient for frequent string operations
+
+
+🔑 Key Points About StringBuilder
+Package: java.lang
+Mutable: Strings can be changed without creating new objects.
+Performance: Faster than String for repeated modifications.
+Thread Safety: Not synchronized (unlike StringBuffer), so use it in single-threaded contexts.
+Common Use Case: Building or modifying strings dynamically, e.g., concatenating in loops.
+
+⚙️ Common Methods in StringBuilder
+append(String str) → Adds text at the end.
+insert(int offset, String str) → Inserts text at a given position.
+delete(int start, int end) → Removes characters in a range
+reverse() → Reverses the sequence.
+toString() → Converts back to a String.
+
+⚠️ Things to Keep in Mind
+Use StringBuilder when working in single-threaded environments and performance matters.
+Use StringBuffer if thread safety is required.
+Avoid String concatenation in loops—it creates many temporary objects, slowing performance.
+
+StringBuilder
+-------------
+Mutable
+Not safe
+Faster
+Single-threaded ops
+
+===========================================================================================================================================================
+
+StringBuffer
+============
+
+In Java, StringBuffer is a mutable sequence of characters, similar to StringBuilder, but synchronized and therefore thread-safe.
+It’s best used when multiple threads may access and modify the same string.
+
+🔑 Key Features of StringBuffer
+Mutable: You can modify the content without creating new objects.
+Thread-Safe: All methods are synchronized, making it safe in multithreaded environments2.
+Performance: Slightly slower than StringBuilder due to synchronization overhead.
+Capacity: Default capacity is 16 characters, but it grows automatically as needed.
+Package: Part of java.lang.
+
+
+⚙️ Common Methods in StringBuffer
+append(String str) → Adds text at the end.
+insert(int offset, String str) → Inserts text at a given position.
+delete(int start, int end) → Removes characters in a range.
+replace(int start, int end, String str) → Replaces characters in a range.
+reverse() → Reverses the sequence.
+capacity() → Returns current buffer capacity.
+toString() → Converts back to a String
+
+
+⚠️ Things to Keep in Mind
+Use StringBuffer when working in multi-threaded environments where synchronization is required.
+Use StringBuilder in single-threaded contexts for better performance.
+Avoid String concatenation in loops—it creates many temporary objects.
+
+
+StringBuffer
+------------
+Mutable
+Safe (synchronized)
+Slower (sync cost)
+Multi-threaded ops
+
+===========================================================================================================================================================
+
+String
+-------
+Immutable
+Safe
+Slower
+Fixed text
+
+
+
+
